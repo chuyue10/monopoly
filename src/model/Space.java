@@ -9,7 +9,14 @@ import java.util.Set;
 
 abstract class Space {
 
-    private HashSet<Player> players;
+    // Instance variables
+    private String name;
+    private Set<Player> players;
+
+    public Space(String name) {
+        this.name = name;
+        this.players = new HashSet<>();
+    }
 
     /**
      * Returns the set of all players that are in this space.
@@ -42,4 +49,24 @@ abstract class Space {
      * @param player
      */
     abstract void onEnter(Player player);
+
+    /**
+     * Returns a String representation of the current state of the Space
+     * @return a String representation of the current state of the Space
+     */
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("The ");
+        string.append(name);
+        if (players.isEmpty()) {
+            string.append(" space is empty.");
+        } else {
+            string.append(" space has:");
+            for (Player p: players) {
+                string.append(" ");
+                string.append(p.getName());
+            }
+        }
+        return string.toString();
+    }
 }
