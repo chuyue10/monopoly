@@ -29,13 +29,14 @@ public class Monopoly {
             System.out.print("Player name: ");
             name = input.nextLine();
             System.out.print("Starting credit: ");
-            startingCredit = input.nextInt(STARTING_CREDIT);
+            startingCredit = Integer.parseInt(input.nextLine());
             Player player = new Player(name, startingCredit, players.size());
             players.add(player);
-            System.out.println(player + " has been created.");
-            System.out.println("Add more players? [Y/N]: ");
+            System.out.println(player);
+            System.out.print("Add more players? [Y/N]: ");
             String respond = input.nextLine();
-            if (respond == "Y") {
+            System.out.println(respond.charAt(0));
+            if (respond.charAt(0) == 'N' || respond.charAt(0) == 'n') {
                 break;
             }
         }

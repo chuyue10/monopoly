@@ -32,6 +32,12 @@ public class Player {
     }
 
     public String toString() {
-        return String.format("ID: %d Name: %-16s Location: %-25s Credit: %6d", id, name, location.getName(), credit);
+        String localName;
+        if (location == null) {
+            localName = "UNDEFINED";
+        } else {
+            localName = location.getName();
+        }
+        return String.format("ID: %d Name: %-16s Location: %-25s Credit: %6d", id, name, localName, credit);
     }
 }

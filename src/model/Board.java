@@ -13,11 +13,11 @@ public class Board {
     private List<Player> players;
 
     public Board(List<Player> players) {
-        players = new ArrayList<Player>();
+        initializeSpaces();
+        this.players = new ArrayList<Player>();
         for (Player p: players) {
             setupPlayer(p);
         }
-        initializeSpaces();
     }
 
     /**
@@ -36,8 +36,10 @@ public class Board {
      */
     public String getPlayers() {
         StringBuilder string = new StringBuilder();
-        for (Player p: players) {
-            string.append(String.format("[%d] %16s %s\n", p.getId(), p.getName(), p.getLocation()));
+        for (int i = 0; i < players.size(); i++) {
+            string.append(String.format("[%d]", i));
+            string.append(players.get(i).toString());
+            string.append("\n");
         }
         return string.toString();
     }
