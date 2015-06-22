@@ -35,12 +35,11 @@ public class Monopoly {
             System.out.println(player);
             System.out.print("Add more players? [Y/N]: ");
             String respond = input.nextLine();
-            System.out.println(respond.charAt(0));
             if (respond.charAt(0) == 'N' || respond.charAt(0) == 'n') {
                 break;
             }
         }
-        System.out.println("Creating game...");
+        System.out.println("Creating game...\n");
 
         Board board = new Board(players);
         System.out.println(board);
