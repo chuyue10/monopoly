@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +13,7 @@ public class Board {
     private List<Player> players;
 
     public Board(List<Player> players) {
+        players = new ArrayList<Player>();
         for (Player p: players) {
             setupPlayer(p);
         }

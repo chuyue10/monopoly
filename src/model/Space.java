@@ -68,4 +68,12 @@ abstract class Space {
         }
         return string.toString();
     }
+
+    /**
+     * Returns just the name for this Space
+     * @return name of the space
+     */
+    public String getName() {
+        return name;
+    }
 }
