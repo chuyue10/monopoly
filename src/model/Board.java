@@ -1,5 +1,8 @@
 package model;
 
+// TODO USE THE MOVE COMMAND WHEN FIRST PLACING PLAYERS INTO GO
+// TODO ALSO MOVE MONOPOLY AND THE COMMANDS OUT SIDE OF THE MODEL CLASS
+
 import java.util.ArrayList;
 import java.util.List;
 
