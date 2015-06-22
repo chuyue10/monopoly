@@ -5,6 +5,8 @@ package model;
  */
 public class ConstructionSpace extends Space {
 
+    // TODO DEFINE WHAT KIND OF BUILDINGS THE SPACE CAN CONSTRUCT
+
     public ConstructionSpace() {
         super("Construction");
     }
