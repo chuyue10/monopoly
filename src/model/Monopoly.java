@@ -23,21 +23,32 @@ public class Monopoly {
         String name = "";
         int startingCredit = 0;
 
-        System.out.println("Enter player names and starting credit.");
+        System.out.println("Enter players.");
         while (true) {
+            System.out.println("Creating player.");
             System.out.print("Player name: ");
             name = input.nextLine();
             System.out.print("Starting credit: ");
             startingCredit = input.nextInt(STARTING_CREDIT);
-            Player player = new Player(name, startingCredit, players.size())
+            Player player = new Player(name, startingCredit, players.size());
             players.add(player);
             System.out.println(player + " has been created.");
             System.out.println("Add more players? [Y/N]: ");
+            String respond = input.nextLine();
+            if (respond == "Y") {
+                break;
+            }
         }
+        System.out.println("Creating game...");
+
+        Board board = new Board(players);
+        System.out.println(board);
+        System.out.println(board.getPlayers());
     }
 
     public static void main(String[] args) {
-
+        Monopoly monopoly = new Monopoly();
+        monopoly.createGame();
     }
 
 }
