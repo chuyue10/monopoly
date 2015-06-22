@@ -1,4 +1,6 @@
-package model;
+package model.space;
+
+import model.Player;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,7 +9,7 @@ import java.util.Set;
  * Created by riachu on 6/19/15.
  */
 
-abstract class Space {
+public abstract class Space {
 
     // Instance variables
     private String name;

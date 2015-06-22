@@ -1,6 +1,7 @@
-package model;
+import model.Board;
+import model.Player;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,14 +12,15 @@ public class Monopoly {
 
     private final int STARTING_CREDIT = 30000;
 
-    public Monopoly() {
+    // Instance variables
+    List<Player> players;
 
+    public Monopoly() {
+        players = new ArrayList<>();
     }
 
     private void createGame() {
         Scanner input = new Scanner(System.in);
-
-        List<Player> players = new LinkedList<Player>();
 
         String name = "";
         int startingCredit = 0;
@@ -39,11 +41,34 @@ public class Monopoly {
                 break;
             }
         }
-        System.out.println("Creating game...\n");
 
+        System.out.println("Creating game...\n");
         Board board = new Board(players);
+
+        System.out.println("Populating board...");
+
+        System.out.println("Placing players into GO Space...");
+        for (Player p: players) {
+            (new MoveCommand(p, board.getSpaces()[0])).execute();
+        }
+
+        System.out.println();
         System.out.println(board);
-        System.out.println(board.getPlayers());
+        System.out.println(showPlayers());
+    }
+
+    /**
+     * Returns a formatted with information of all the Players on the Board.
+     * @return
+     */
+    public String showPlayers() {
+        StringBuilder string = new StringBuilder();
+        for (int i = 0; i < players.size(); i++) {
+            string.append(String.format("[%d]: ", i));
+            string.append(players.get(i).toString());
+            string.append("\n");
+        }
+        return string.toString();
     }
 
     public static void main(String[] args) {

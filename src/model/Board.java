@@ -1,7 +1,9 @@
 package model;
 
 // TODO USE THE MOVE COMMAND WHEN FIRST PLACING PLAYERS INTO GO
-// TODO ALSO MOVE MONOPOLY AND THE COMMANDS OUT SIDE OF THE MODEL CLASS
+// TODO REMOVE PLAYER ARRAY FROM THIS FILE
+
+import model.space.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,18 +21,8 @@ public class Board {
         initializeSpaces();
         this.players = new ArrayList<Player>();
         for (Player p: players) {
-            setupPlayer(p);
+            this.players.add(p);
         }
-    }
-
-    /**
-     * Setup a player. 1. Add to List of Player
-     *                 2. Put in GO space
-     * @param player the player to be added
-     */
-    public void setupPlayer(Player player) {
-        players.add(player);
-        spaces[0].addPlayer(player);
     }
 
     /**
@@ -102,6 +94,10 @@ public class Board {
         spaces[39] = new DistrictSpace("Diamond Hill", 4000, new int[]{500, 3000, 5000, 8000, 10000, 12000, 15000, 18000, 20000});
 
         spaces[40] = new JailSpace();
+    }
+
+    public Space[] getSpaces() {
+        return spaces;
     }
 
     /**

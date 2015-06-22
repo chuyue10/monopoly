@@ -1,5 +1,7 @@
 package model;
 
+import model.space.Space;
+
 /**
  * Created by riachu on 6/19/15.
  */
@@ -25,6 +27,10 @@ public class Player {
 
     public int getId() {
         return id;
+    }
+
+    public void setLocation(Space location) {
+        this.location = location;
     }
 
     public Space getLocation() {
