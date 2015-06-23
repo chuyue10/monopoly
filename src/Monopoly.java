@@ -1,4 +1,5 @@
 import model.Board;
+import model.MoveCommand;
 import model.Player;
 
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package model;
 /**
  * Created by riachu on 6/19/15.
  */
-public class DistrictSpace extends Space {
+class DistrictSpace extends Space {
 
     // Instance variables
     int cost;

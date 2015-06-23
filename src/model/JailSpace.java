@@ -3,7 +3,7 @@ package model;
 /**
  * Created by Charles on 6/21/2015.
  */
-public class JailSpace extends Space {
+class JailSpace extends Space {
 
     public JailSpace() {
         super("Jail");

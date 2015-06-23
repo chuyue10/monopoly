@@ -3,7 +3,7 @@ package model;
 /**
  * Created by Charles on 6/21/2015.
  */
-public class SalarySpace extends Space {
+class SalarySpace extends Space {
 
     public SalarySpace() {
         super("GO");

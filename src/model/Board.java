@@ -14,6 +14,7 @@ public class Board {
     // Instance variables
     private Space[] spaces;
     private List<Player> players;
+    private Dude banker;
 
     public Board(List<Player> players) {
         initializeSpaces();

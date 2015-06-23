@@ -9,7 +9,7 @@ import java.util.Set;
  * Created by riachu on 6/19/15.
  */
 
-public abstract class Space {
+abstract class Space {
 
     // Instance variables
     private String name;
