@@ -1,4 +1,4 @@
-package model;// TODO FINISH WRITING MOVE COMMAND
+package model;
 // TODO IMPLEMENT UNDO
 
 /**
