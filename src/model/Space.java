@@ -1,4 +1,4 @@
-package model.space;
+package model;
 
 import model.Player;
 

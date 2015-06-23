@@ -1,8 +1,5 @@
-// TODO FINISH WRITING MOVE COMMAND
+package model;// TODO FINISH WRITING MOVE COMMAND
 // TODO IMPLEMENT UNDO
-
-import model.Player;
-import model.space.Space;
 
 /**
  * Created by riachu on 6/22/15.

@@ -1,6 +1,4 @@
-package model.space;
-
-import model.Player;
+package model;
 
 /**
  * Created by riachu on 6/19/15.

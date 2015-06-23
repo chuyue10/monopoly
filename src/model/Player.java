@@ -1,7 +1,5 @@
 package model;
 
-import model.space.Space;
-
 /**
  * Created by riachu on 6/19/15.
  */

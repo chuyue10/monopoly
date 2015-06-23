@@ -3,8 +3,6 @@ package model;
 // TODO USE THE MOVE COMMAND WHEN FIRST PLACING PLAYERS INTO GO
 // TODO REMOVE PLAYER ARRAY FROM THIS FILE
 
-import model.space.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
