@@ -8,12 +8,18 @@ import java.util.Set;
  */
 class Dude {
 
+    private String name;
     private int credit;
     private Set<DistrictSpace> property;
 
-    public Dude(int credit) {
+    public Dude(String name, int credit) {
+        this.name = name;
         this.credit = credit;
         property = new HashSet<>();
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void addCredit(int amount) {

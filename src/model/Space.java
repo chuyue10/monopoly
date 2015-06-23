@@ -60,13 +60,14 @@ abstract class Space {
         StringBuilder string = new StringBuilder();
         string.append(String.format("%-25s", name));
         if (players.isEmpty()) {
-            string.append(String.format(" %-10s", "Empty"));
+            string.append(String.format(" %-32s", "Empty"));
         } else {
-            StringBuilder playerID = new StringBuilder();
+            StringBuilder playerNames = new StringBuilder();
             for (Player p: players) {
-                playerID.append(p.getId());
+                playerNames.append(p.getName());
+                playerNames.append(" ");
             }
-            string.append(String.format(" %-10s", playerID.toString()));
+            string.append(String.format(" %-32s", playerNames.toString()));
         }
         return string.toString();
     }

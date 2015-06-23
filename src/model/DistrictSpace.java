@@ -6,11 +6,11 @@ package model;
 class DistrictSpace extends Space {
 
     // Instance variables
-    int cost;
-    int[] rent;
-    int house;
-    int factory;
-    Player owner;
+    private int cost;
+    private int[] rent;
+    private int house;
+    private int factory;
+    private Dude owner;
 
     public DistrictSpace(String name, int cost, int[] rent) {
         super(name + " District");
@@ -25,7 +25,11 @@ class DistrictSpace extends Space {
 
     }
 
-    public void setOwner(Player newOwner) {
+    public Dude getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Dude newOwner) {
         this.owner = newOwner;
     }
 

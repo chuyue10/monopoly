@@ -4,13 +4,13 @@ package model;// TODO FINISH WRITING MOVE COMMAND
 /**
  * Created by riachu on 6/22/15.
  */
-public class MoveCommand implements Command {
+public class MoveToCommand implements Command {
 
     private Player player;
     private Space origin;
     private Space destination;
 
-    public MoveCommand(Player player, Space destination) {
+    public MoveToCommand(Player player, Space destination) {
         this.player = player;
         this.origin = player.getLocation();
         this.destination = destination;

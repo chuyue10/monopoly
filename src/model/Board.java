@@ -1,7 +1,7 @@
 package model;
 
-// TODO USE THE MOVE COMMAND WHEN FIRST PLACING PLAYERS INTO GO
-// TODO REMOVE PLAYER ARRAY FROM THIS FILE
+// TODO ADD PLAYERS TO THIS FILE AND THIS FILE ONLY
+// TODO DOCUMENT CLASSES AND CHANGE VISIBILITY APPROPRIATELY
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,24 +11,64 @@ import java.util.List;
  */
 public class Board {
 
+    // Static Variables
+    static final int BANKER_FUND = 1000000;
+
     // Instance variables
     private Space[] spaces;
     private List<Player> players;
     private Dude banker;
 
-    public Board(List<Player> players) {
+    public Board() {
+        System.out.println("Creating the Board...");
+        System.out.println("Building the Spaces...");
         initializeSpaces();
         this.players = new ArrayList<Player>();
-        for (Player p: players) {
-            this.players.add(p);
+        this.banker = new Dude("Banker", BANKER_FUND);
+
+        System.out.println("Giving all the properties to the banker dude...");
+        // Gives all the districts to the banker Dude
+        for (int i = 0; i < spaces.length; i++) {
+            if (spaces[i] instanceof DistrictSpace) {
+                (new GivePropertyCommand((DistrictSpace) spaces[i], banker)).execute();
+            }
         }
     }
 
     /**
-     * Returns a formatted with information of all the Players on the Board.
-     * @return
+     * INTENDED TO BE USED BY A COMMAND ONLY
+     * Adds a player to the board. Can only be accessed from within the model package.
+     * Intended to be used by a Command only.
+     * @param player
      */
-    public String getPlayers() {
+    void addPlayer(Player player) {
+        players.add(player);
+    }
+
+    /**
+     * INTENDED TO BE USED BY A COMMAND ONLY
+     * Removes a player from the board. Can only be accesed from within the model package.
+     * Intended to be used by a Command only.
+     * @param player
+     */
+    void removePlayer(Player player) {
+        players.remove(player);
+    }
+
+    /**
+     * INTENDED TO BE USED BY A COMMAND ONLY
+     * Returns the banker Dude.
+     * @return the banker Dude
+     */
+    Dude getBanker() {
+        return banker;
+    }
+
+    /**
+     * Returns a formatted with information of all the Players on the Board.
+     * @return a formatted String with all the Players
+     */
+    public String showPlayers() {
         StringBuilder string = new StringBuilder();
         for (int i = 0; i < players.size(); i++) {
             string.append(String.format("[%d]", i));
@@ -95,13 +135,17 @@ public class Board {
         spaces[40] = new JailSpace();
     }
 
+    /**
+     * Returns the array of Spaces on the Board.
+     * @return the array of Spaces on the Board
+     */
     public Space[] getSpaces() {
         return spaces;
     }
 
     /**
      * Returns a String containing a list of all Spaces on this Board.
-     * @return a String containing a list of all Spaces on this Board.
+     * @return a String containing a list of all Spaces on this Board
      */
     public String toString() {
         StringBuilder string = new StringBuilder();
